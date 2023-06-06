@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+    <link rel="stylesheet" href="style.css">
+    <title>Robot Builder Clicker</title>
+</head>
+<body>
+    <main class="game-container">
+        <h1>Robot Builder Clicker</h1>
+        <section class="currency">Gold: <span id="currency-counter">0</span></section>
+        <button id="build-button">
+            Build
+            <div id="build-feedback-container"></div>
+        </button>
+        <div class="currency-change" id="points-change">+0</div>
+        <section class="builder" id="builder-1">
+            <span class="builder-name">Basic Builder</span>
+            <span class="builder-quantity" id="basic-builder-quantity">0</span>
+            <span class="builder-cost">Cost: <span id="basic-builder-cost">10</span></span>
+            <button class="builder__button--buy" id="basic-builder-buy-button" disabled>Buy</button>
+            <button class="builder__button--buy-max" id="basic-builder-buy-max-button" disabled>Buy Max</button>
+        </section>
+        <section class="upgrade" id="upgrade-1">
+            <span class="upgrade-name">Click Boost</span>
+            <span class="upgrade-quantity" id="click-boost-quantity">0</span>
+            <span class="upgrade-cost">Cost: <span id="click-boost-cost">50</span></span>
+            <button class="upgrade__button--buy" id="upgrade-buy-button" disabled>Buy</button>
+            <button class="upgrade__button--buy-max" id="upgrade-buy-max-button" disabled>Buy Max</button>
+        </section>
+        <button id="save-button">Save Game</button>
+        <button id="load-button">Load Game</button>
+        <div id="purchase-message">Purchase successful!</div>
+    </main>
+    <audio id="bg-music" src="song.wav" loop></audio>
+    <script src="script.js"></script>
+  
+</body>
+</html>
