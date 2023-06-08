@@ -5,6 +5,7 @@
     --button-bg-color: #007bff;
     --button-active-color: #0056b3;
     --button-padding: 10px 20px;
+    --button-border-radius: 5px;
     --disabled-button-color: #6c757d;
     --main-padding: 20px;
     --purchase-message-color: #28a745;
@@ -13,7 +14,6 @@
     --font-size-currency-change: 16px;
 }
 
-/* Add your new styles here */
 body {
     font-family: var(--main-font-family);
     background-color: var(--main-bg-color);
@@ -21,3 +21,99 @@ body {
     margin: 0;
     padding: 0;
 }
+
+.game-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: var(--main-padding);
+    text-align: center;
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+    margin-bottom: 20px;
+}
+
+.currency {
+    font-size: var(--font-size-currency);
+    margin-bottom: 20px;
+}
+
+.currency-change {
+    font-size: var(--font-size-currency-change);
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+.builder, .upgrade {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.builder__button--buy, .builder__button--buy-max, .upgrade__button--buy, .upgrade__button--buy-max {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    background-color: #28a745;
+}
+
+.builder__button--buy:disabled, .builder__button--buy-max:disabled, .upgrade__button--buy:disabled, .upgrade__button--buy-max:disabled {
+    background-color: var(--disabled-button-color);
+    cursor: not-allowed;
+}
+
+#build-button, #save-button, #load-button {
+    font-size: var(--font-size-currency);
+    padding: var(--button-padding);
+    background-color: var(--button-bg-color);
+    border: none;
+    border-radius: var(--button-border-radius);
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+#build-feedback-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.build-feedback {
+    position: absolute;
+    color: var(--main-font-color);
+    animation: floatText 2s linear forwards;
+}
+
+@keyframes floatText {
+    0% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+    }
+}
+
+#build-button:active, #save-button:active, #load-button:active {
+    background-color: var(--button-active-color);
+}
+
+#purchase-message {
+    color: var(--purchase-message-color);
+    transition: opacity 2s ease-out;
+    opacity: 0;
+}
+
